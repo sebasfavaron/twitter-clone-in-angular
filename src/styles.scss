@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --breakpoint-mobile: 320px;
+  --breakpoint-tablet: 600px;
+  --breakpoint-desktop: 1024px;
+
+  --color-primary-light: #a5ccf4;
+  --color-primary-main: #4a99e9;
+  --color-primary-dark: #428ad2;
+  --color-state-error: #e03c39;
+  --color-grayscale-white: #ffffff;
+  --color-grayscale-inactive-bg: #f0f3f4;
+  --color-grayscale-container-line: #f0f3f4;
+  --color-grayscale-hover: #e7e7e8;
+  --color-grayscale-outline: #d1d9dd;
+  --color-grayscale-text-2: #566370;
+  --color-grayscale-black: #000000;
+
+  --font-manrope: "Manrope";
+  --font-inter: "Inter";
+
+  --mobile-navbar-height: 52px;
+}

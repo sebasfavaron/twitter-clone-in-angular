@@ -1,0 +1,28 @@
+a {
+  all: unset;
+  display: flex;
+  text-transform: capitalize;
+
+  @media (min-width: 1025px) {
+    padding: 16px;
+    gap: 16px;
+    font-size: 20px;
+    font-family: "Manrope";
+    line-height: 110%;
+    letter-spacing: -0.2px;
+
+    &.selected {
+      font-weight: 800;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  img {
+    width: 24px;
+    height: 22px;
+    align-self: center;
+  }
+}

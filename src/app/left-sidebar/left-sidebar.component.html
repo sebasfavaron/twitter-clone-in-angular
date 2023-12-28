@@ -1,0 +1,35 @@
+<div class="left-sidebar-style">
+  <app-left-sidebar-buttons [isMobile]="isMobile" (toggleHomeMenu)="toggleHomeMenu()"></app-left-sidebar-buttons>
+
+  <!-- <app-home-menu *ngIf="isMobile && isHomeMenuOpen" (onClose)="setIsHomeMenuOpen(false)"
+      (onLanguageToggle)="handleLanguageToggle()"></app-home-menu>
+
+    <app-post-button *ngIf="!isMobile" (click)="setPostModalIsOpen(true)">{{ 'leftSidebar.postButton' | translate
+      }}</app-post-button>
+
+    <app-modal *ngIf="postModalIsOpen" (onClose)="setPostModalIsOpen(false)">
+      <div class="post-modal">
+        <app-post-input [modalProps]="{
+            isModalOpen: postModalIsOpen,
+            closeModal: () => setPostModalIsOpen(false),
+          }"></app-post-input>
+      </div>
+    </app-modal> -->
+
+  <div class="log-out">
+    <!-- <app-outside-click-close (close)="setMenuCardIsOpen(false)">
+        <app-user-display [user]="user"></app-user-display>
+        <app-three-dots (click)="setMenuCardIsOpen(true)"></app-three-dots>
+        <div *ngIf="menuCardIsOpen" class="menu-card">
+          <div (click)="setLogOutModalIsOpen(true)">
+            {{ 'logOut.cardPrefix' + user?.username | translate }}
+          </div>
+          <div (click)="handleLanguageToggle()">
+            {{ 'logOut.toggleLanguagePrefix' + otherLanguage() | translate }}
+          </div>
+        </div>
+      </app-outside-click-close> -->
+  </div>
+
+  <!-- <app-log-out-modal *ngIf="logOutModalIsOpen" (onClose)="setLogOutModalIsOpen(false)"></app-log-out-modal> -->
+</div>
