@@ -9,5 +9,6 @@ export const routes: Routes = [
   { path: 'explore', component: ExploreComponent },
   { path: 'message', component: MessagesComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'profile/:userId', component: ProfileComponent },
   { path: '**', redirectTo: '' },
 ];

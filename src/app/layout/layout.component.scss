@@ -6,7 +6,6 @@
 
   background-color: var(--color-grayscale-white);
   :nth-child(1) {
-    width: 30%;
     @media (max-width: var(--breakpoint-desktop)) {
       box-sizing: border-box;
       width: 100%;
@@ -14,14 +13,12 @@
     }
   }
   :nth-child(2) {
-    // ${({ $page }) => ($page === 'message' ? 'width: 30%;' : 'width: 40%;')}
     @media (max-width: var(--breakpoint-desktop)) {
       width: 100%;
       height: calc(100% - var(--mobile-navbar-height));
     }
   }
   :nth-child(3) {
-    // ${({ $page }) => ($page === 'message' ? 'width: 40%;' : 'width: 30%;')}
     @media (max-width: var(--breakpoint-desktop)) {
       display: none;
     }

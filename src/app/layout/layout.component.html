@@ -1,5 +1,5 @@
-<app-left-sidebar />
-<div>
-  <ng-content></ng-content>
+<app-left-sidebar [ngStyle]="{'width': '30%'}" />
+<div [ngStyle]="{'width': page === 'message' ? '30%' : '40%'}">
+  <ng-content />
 </div>
-<app-right-sidebar />
+<app-right-sidebar [ngStyle]="{'width': page === 'message' ? '40%' : '30%'}" />
