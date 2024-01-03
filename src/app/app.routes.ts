@@ -1,14 +1,18 @@
 import { Routes } from '@angular/router';
-import { ExploreComponent } from './explore/explore.component';
-import { HomeViewComponent } from './home-view/home-view.component';
-import { MessagesComponent } from './messages/messages.component';
-import { ProfileComponent } from './profile/profile.component';
+import { ExploreComponent } from './components/explore/explore.component';
+import { HomeViewComponent } from './components/home-view/home-view.component';
+import { MessagesComponent } from './components/messages/messages.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeViewComponent },
-  { path: 'explore', component: ExploreComponent },
-  { path: 'message', component: MessagesComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'profile/:userId', component: ProfileComponent },
-  { path: '**', redirectTo: '' },
+  { path: '', title: 'Twitter', component: HomeViewComponent },
+  { path: 'explore', title: 'Twitter explore', component: ExploreComponent },
+  { path: 'message', title: 'Twitter message', component: MessagesComponent },
+  { path: 'profile', title: 'Twitter profile', component: ProfileComponent },
+  {
+    path: 'profile/:userId',
+    title: 'Twitter profile',
+    component: ProfileComponent,
+  },
+  { path: '**', title: 'Twitter', redirectTo: '' },
 ];

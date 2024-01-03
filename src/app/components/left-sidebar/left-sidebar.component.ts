@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { IsMobileService } from '../../services/is-mobile/is-mobile.service';
 import { LeftSidebarButtonsComponent } from '../left-sidebar-buttons/left-sidebar-buttons.component';
 // import { isMobile } from '../hooks/useIsMobile'; // Import your Angular isMobile logic
 // import { ApiService } from '../services/api.service'; // Import your Angular API service
@@ -10,21 +13,36 @@ import { LeftSidebarButtonsComponent } from '../left-sidebar-buttons/left-sideba
   templateUrl: './left-sidebar.component.html',
   styleUrls: ['./left-sidebar.component.scss'],
   standalone: true,
-  imports: [LeftSidebarButtonsComponent],
+  imports: [LeftSidebarButtonsComponent, CommonModule],
 })
-export class LeftSidebarComponent implements OnInit {
+export class LeftSidebarComponent implements OnInit, OnDestroy {
   postModalIsOpen = false;
   menuCardIsOpen = false;
   logOutModalIsOpen = false;
   isHomeMenuOpen = false;
-  isMobile!: boolean;
+  // isMobile = false;
+  isMobile = false;
+  private isMobileSubscription?: Subscription;
   user: any; // Replace 'any' with the actual type of your user object
 
-  constructor() {} // private appContextService: AppContextService // private apiService: ApiService,
+  constructor(
+    private isMobileService: IsMobileService // private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
-    // this.isMobile = isMobile();
-    // this.user = this.appContextService.getState().user;
+    // await setTimeout(() => {}, 1000);
+    this.isMobileSubscription =
+      this.isMobileService.isMobileSubscription.subscribe((isMobile) => {
+        this.isMobile = isMobile;
+      });
+    // .subscribe((isMobile) => {
+    //   this.isMobile = isMobile;
+    //   this.cdr.detectChanges();
+    // });
+  }
+
+  ngOnDestroy(): void {
+    this.isMobileSubscription?.unsubscribe();
   }
 
   toggleHomeMenu(): void {
