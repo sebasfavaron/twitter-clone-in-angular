@@ -1,0 +1,20 @@
+<div class="register-login-style">
+  <div>
+    <img src="assets/twitter-logo.svg" alt="Twitter Logo" />
+    <h1 class='auth-page-header'>{{ 'loginHeader' | translate }}</h1>
+    <form [formGroup]="loginForm" class='auth-page-form' (ngSubmit)="onSubmit()">
+      <input type="text" id="username" formControlName="username" placeholder="Username or email" />
+      <input type="password" id="password" formControlName="password" />
+      <!-- TODO: Spinner while waiting for login response -->
+      <div *ngIf="logInCallError" class="login-error-label">
+        {{ logInCallError }}
+      </div>
+      <button type="submit" [disabled]="loginForm.invalid">
+        {{ 'loginButton' | translate }}
+      </button>
+    </form>
+    <button (click)="navigateToRegister()">
+      {{ 'registerButton' | translate }}
+    </button>
+  </div>
+</div>

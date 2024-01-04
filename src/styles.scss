@@ -20,3 +20,18 @@
 
   --mobile-navbar-height: 52px;
 }
+
+h1.auth-page-header {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 110%;
+  color: var(--color-grayscale-black);
+  margin-bottom: 60px;
+}
+
+form.auth-page-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  min-height: 495px;
+}

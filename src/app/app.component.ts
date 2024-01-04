@@ -10,15 +10,11 @@ import { IsMobileService } from './services/is-mobile/is-mobile.service';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'angular-twitter-training';
-
   constructor(
     private isMobileService: IsMobileService,
     private ngZone: NgZone
   ) {
     afterNextRender(() => {
-      console.log('afterNextRender');
-      //update when window resizes
       window.addEventListener('resize', () => {
         // NgZone.run() is needed to force change detection
         this.ngZone.run(() => {
