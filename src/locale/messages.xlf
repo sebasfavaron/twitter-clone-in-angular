@@ -31,5 +31,22 @@
         <source> For you </source>
       </segment>
     </unit>
+    <unit id="187187500641108332">
+      <segment>
+        <source>
+          <ph id="0" equiv="INTERPOLATION" disp="{{&apos;Enter your email or @username&apos;}}"/>
+        </source>
+      </segment>
+    </unit>
+    <unit id="1908285951500318953">
+      <segment>
+        <source> Login </source>
+      </segment>
+    </unit>
+    <unit id="2907733796351584017">
+      <segment>
+        <source> Register </source>
+      </segment>
+    </unit>
   </file>
 </xliff>

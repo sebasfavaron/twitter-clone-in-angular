@@ -1,16 +1,16 @@
 <div class="left-sidebar-buttons-style">
-  <app-sidebar-button i18n [img]="currentPath === '/' ? 'assets/home-hover.svg' : 'assets/home.svg'" path="/"
-    [currentPath]="currentPath" [isMobile]="isMobile" (onClick)="handleButtonClick($event)">Home</app-sidebar-button>
+  <app-sidebar-button i18n-text [img]="currentPath === '/' ? 'assets/home-hover.svg' : 'assets/home.svg'" path="/"
+    [currentPath]="currentPath" [isMobile]="isMobile" (onClick)="handleButtonClick($event)" text='Home' />
 
-  <app-sidebar-button i18n [img]="currentPath === '/explore' ? 'assets/explore-hover.svg' : 'assets/explore.svg'"
-    path="/explore" [currentPath]="currentPath" [isMobile]="isMobile"
-    (onClick)="handleButtonClick($event)">Explore</app-sidebar-button>
+  <app-sidebar-button i18n-text [img]="currentPath === '/explore' ? 'assets/explore-hover.svg' : 'assets/explore.svg'"
+    path="/explore" [currentPath]="currentPath" [isMobile]="isMobile" (onClick)="handleButtonClick($event)"
+    text='Explore' />
 
-  <app-sidebar-button i18n [img]="currentPath === '/message' ? 'assets/message-hover.svg' : 'assets/message.svg'"
-    path="/message" [currentPath]="currentPath" [isMobile]="isMobile"
-    (onClick)="handleButtonClick($event)">Message</app-sidebar-button>
+  <app-sidebar-button i18n-text [img]="currentPath === '/message' ? 'assets/message-hover.svg' : 'assets/message.svg'"
+    path="/message" [currentPath]="currentPath" [isMobile]="isMobile" (onClick)="handleButtonClick($event)"
+    text='Message' />
 
-  <app-sidebar-button i18n [img]="currentPath === '/profile' ? 'assets/profile-hover.svg' : 'assets/profile.svg'"
-    path="/profile" [currentPath]="currentPath" [isMobile]="isMobile"
-    (onClick)="handleButtonClick($event)">Profile</app-sidebar-button>
+  <app-sidebar-button i18n-text [img]="currentPath === '/profile' ? 'assets/profile-hover.svg' : 'assets/profile.svg'"
+    path="/profile" [currentPath]="currentPath" [isMobile]="isMobile" (onClick)="handleButtonClick($event)"
+    text='Profile' />
 </div>

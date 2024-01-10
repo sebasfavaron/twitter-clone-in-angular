@@ -36,5 +36,27 @@
         <target> Siguiendo </target>
       </segment>
     </unit>
+    <unit id="187187500641108332">
+      <segment state="initial">
+        <source>
+          <ph id="0" equiv="INTERPOLATION" disp="{{&apos;Enter your email or @username&apos;}}" />
+        </source>
+        <target>
+          <ph id="0" equiv="INTERPOLATION" disp="{{&apos;Ingresa tu email o usuario&apos;}}" />
+        </target>
+      </segment>
+    </unit>
+    <unit id="1908285951500318953">
+      <segment state="initial">
+        <source> Login </source>
+        <target> Iniciar sesión </target>
+      </segment>
+    </unit>
+    <unit id="2907733796351584017">
+      <segment state="initial">
+        <source> Register </source>
+        <target> Registrarse </target>
+      </segment>
+    </unit>
   </file>
 </xliff>

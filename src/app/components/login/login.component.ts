@@ -7,7 +7,6 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
-import { TranslatePipe } from '../../pipes/translate/translate.pipe';
 import { AuthService } from '../../services/auth/auth.service';
 
 // use translate pipe for all text
@@ -17,7 +16,7 @@ import { AuthService } from '../../services/auth/auth.service';
   standalone: true,
   styleUrls: ['./login.component.scss'],
   providers: [AuthService],
-  imports: [TranslatePipe, NgIf, ReactiveFormsModule],
+  imports: [NgIf, ReactiveFormsModule],
 })
 export class LoginComponent {
   loginForm: FormGroup;
