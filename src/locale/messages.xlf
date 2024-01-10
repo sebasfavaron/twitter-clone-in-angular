@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="2.0" xmlns="urn:oasis:names:tc:xliff:document:2.0" srcLang="en-US">
+  <file id="ngi18n" original="ng.template">
+    <unit id="2821179408673282599">
+      <segment>
+        <source>Home</source>
+      </segment>
+    </unit>
+    <unit id="4915431133669985304">
+      <segment>
+        <source>Profile</source>
+      </segment>
+    </unit>
+    <unit id="8066608938393600549">
+      <segment>
+        <source>Message</source>
+      </segment>
+    </unit>
+    <unit id="9212705249340904752">
+      <segment>
+        <source>Explore</source>
+      </segment>
+    </unit>
+    <unit id="2078315663370643770">
+      <segment>
+        <source> Following </source>
+      </segment>
+    </unit>
+    <unit id="3343962673248041372">
+      <segment>
+        <source> For you </source>
+      </segment>
+    </unit>
+  </file>
+</xliff>

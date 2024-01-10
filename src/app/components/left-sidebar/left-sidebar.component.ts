@@ -20,25 +20,17 @@ export class LeftSidebarComponent implements OnInit, OnDestroy {
   menuCardIsOpen = false;
   logOutModalIsOpen = false;
   isHomeMenuOpen = false;
-  // isMobile = false;
   isMobile = false;
   private isMobileSubscription?: Subscription;
   user: any; // Replace 'any' with the actual type of your user object
 
-  constructor(
-    private isMobileService: IsMobileService // private cdr: ChangeDetectorRef
-  ) {}
+  constructor(private isMobileService: IsMobileService) {}
 
   ngOnInit(): void {
-    // await setTimeout(() => {}, 1000);
     this.isMobileSubscription =
       this.isMobileService.isMobileSubscription.subscribe((isMobile) => {
         this.isMobile = isMobile;
       });
-    // .subscribe((isMobile) => {
-    //   this.isMobile = isMobile;
-    //   this.cdr.detectChanges();
-    // });
   }
 
   ngOnDestroy(): void {

@@ -4,6 +4,12 @@
   "newProjectRoot": "projects",
   "projects": {
     "angular-twitter-training": {
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "es": "src/locale/messages.es.xlf"
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,6 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "localize": ["es"],
             "outputPath": "dist/angular-twitter-training",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -75,9 +82,12 @@
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "builder": "ng-extract-i18n-merge:ng-extract-i18n-merge",
           "options": {
-            "buildTarget": "angular-twitter-training:build"
+            "browserTarget": "angular-twitter-training:build",
+            "format": "xlf2",
+            "outputPath": "src/locale",
+            "targetFiles": ["messages.es.xlf"]
           }
         },
         "test": {

@@ -1,4 +1,4 @@
-<a [ngClass]="{ selected: isselected }" [routerLink]="['/', text() === 'home' ? '' : text()]">
+<a [ngClass]="{ selected: isselected }" [routerLink]="[path]">
   <img [src]="img" [alt]="text()" />
-  <p *ngIf="!isMobile">{{ text() }}</p>
+  <p *ngIf="!isMobile"><ng-content /></p>
 </a>
