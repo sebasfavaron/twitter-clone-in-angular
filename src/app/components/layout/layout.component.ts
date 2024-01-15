@@ -1,6 +1,8 @@
 import { NgStyle } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, afterRender } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '../../services/user/user.service';
+import { User } from '../../types';
 import { LeftSidebarComponent } from '../left-sidebar/left-sidebar.component';
 import { RightSidebarComponent } from '../right-sidebar/right-sidebar.component';
 
@@ -14,13 +16,25 @@ function isOfTypeMainPages(route: string): route is MainPages {
   imports: [LeftSidebarComponent, RightSidebarComponent, NgStyle],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',
+  providers: [UserService],
 })
 export class LayoutComponent {
   @Input() rightChildren: any;
   page: MainPages;
+  user?: User;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private userService: UserService) {
     const route = this.router.url.split('/')[1];
     this.page = isOfTypeMainPages(route) ? route : 'home';
+    afterRender(() => {
+      this.userService.getLoggedUserCall().subscribe({
+        next: (user) => {
+          this.user = user;
+        },
+        error: (error) => {
+          console.error('Error getting logged user:', error);
+        },
+      });
+    });
   }
 }
