@@ -2,4 +2,4 @@
 <div [ngStyle]="{'width': page === 'message' ? '30%' : '40%'}">
   <ng-content />
 </div>
-<app-right-sidebar [ngStyle]="{'width': page === 'message' ? '40%' : '30%'}" />
+<app-right-sidebar [ngStyle]="{'width': page === 'message' ? '40%' : '30%'}" [page]='page' />

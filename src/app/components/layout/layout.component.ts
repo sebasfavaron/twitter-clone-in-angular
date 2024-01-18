@@ -1,6 +1,5 @@
 import { NgStyle } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
 import { UserService } from '../../services/user/user.service';
 import { User } from '../../types';
 import { LeftSidebarComponent } from '../left-sidebar/left-sidebar.component';
@@ -19,12 +18,8 @@ function isOfTypeMainPages(route: string): route is MainPages {
   providers: [UserService],
 })
 export class LayoutComponent {
-  @Input() rightChildren: any;
-  page: MainPages;
+  @Input() page!: MainPages;
   user?: User;
 
-  constructor(private router: Router) {
-    const route = this.router.url.split('/')[1];
-    this.page = isOfTypeMainPages(route) ? route : 'home';
-  }
+  constructor() {}
 }
