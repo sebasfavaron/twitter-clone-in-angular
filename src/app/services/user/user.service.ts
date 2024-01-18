@@ -10,11 +10,25 @@ const userRoute = `${environment.apiUrl}/user`;
   providedIn: 'root',
 })
 export class UserService {
+  user?: User;
+
   constructor(private http: HttpClient, private tokenService: TokenService) {}
 
-  getLoggedUserCall() {
-    return this.http.get<User>(`${userRoute}/me`, {
-      headers: { Authorization: `Bearer ${this.tokenService.getToken()}` },
-    });
+  loadLoggedUser() {
+    const token = this.tokenService.getToken();
+    if (this.user || !token) return;
+
+    this.http
+      .get<User>(`${userRoute}/me`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .subscribe({
+        next: (user) => {
+          this.user = user;
+        },
+        error: (error) => {
+          console.error('Error getting logged user:', error);
+        },
+      });
   }
 }

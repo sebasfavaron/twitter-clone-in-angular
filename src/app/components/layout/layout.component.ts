@@ -1,5 +1,5 @@
 import { NgStyle } from '@angular/common';
-import { Component, Input, afterRender } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user/user.service';
 import { User } from '../../types';
@@ -23,18 +23,8 @@ export class LayoutComponent {
   page: MainPages;
   user?: User;
 
-  constructor(private router: Router, private userService: UserService) {
+  constructor(private router: Router) {
     const route = this.router.url.split('/')[1];
     this.page = isOfTypeMainPages(route) ? route : 'home';
-    afterRender(() => {
-      this.userService.getLoggedUserCall().subscribe({
-        next: (user) => {
-          this.user = user;
-        },
-        error: (error) => {
-          console.error('Error getting logged user:', error);
-        },
-      });
-    });
   }
 }

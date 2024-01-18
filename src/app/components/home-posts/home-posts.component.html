@@ -1,0 +1,9 @@
+<div *ngIf="posts">
+  <div *ngFor="let post of posts">
+    {{post.content}}
+  </div>
+  <!-- <app-posts [posts]="posts"></app-posts> -->
+</div>
+<div *ngIf="!posts">
+  <p>Loading...</p>
+</div>

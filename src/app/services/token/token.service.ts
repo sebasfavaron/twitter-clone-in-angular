@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 
 export const LOCAL_STORAGE_TOKEN_KEY = 'token';
 
@@ -6,17 +7,24 @@ export const LOCAL_STORAGE_TOKEN_KEY = 'token';
   providedIn: 'root',
 })
 export class TokenService {
-  constructor() {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   setToken(token: string): void {
-    localStorage.setItem(LOCAL_STORAGE_TOKEN_KEY, token);
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem(LOCAL_STORAGE_TOKEN_KEY, token);
+    }
   }
 
   getToken(): string | null {
-    return localStorage.getItem(LOCAL_STORAGE_TOKEN_KEY);
+    if (isPlatformBrowser(this.platformId)) {
+      return localStorage.getItem(LOCAL_STORAGE_TOKEN_KEY);
+    }
+    return null;
   }
 
   removeToken(): void {
-    localStorage.removeItem(LOCAL_STORAGE_TOKEN_KEY);
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.removeItem(LOCAL_STORAGE_TOKEN_KEY);
+    }
   }
 }
